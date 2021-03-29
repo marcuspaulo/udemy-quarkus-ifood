@@ -6,13 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ifood" />
+        <module name="pedido" />
+        <module name="cadastro" />
+        <module name="marketplace" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="cadastro" target="11" />
-      <module name="marketplace" target="11" />
-      <module name="pedido" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>

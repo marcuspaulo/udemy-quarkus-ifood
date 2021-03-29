@@ -1,0 +1,7 @@
+restaurante:
+  - ID: 123
+    NOME: "Restaurante Brasileiro"
+    PROPRIETARIO: "ID do KeyCloak"
+  - ID: 1234
+    NOME: "Restaurante Japonês"
+    PROPRIETARIO: "ID do KeyCloak"

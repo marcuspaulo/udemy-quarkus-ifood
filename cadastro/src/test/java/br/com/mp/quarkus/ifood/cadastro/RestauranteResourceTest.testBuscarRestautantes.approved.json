@@ -1,0 +1,30 @@
+[
+  {
+    "dataAtualizacao": "2021-03-26T21:35:39.92Z[UTC]",
+    "dataCriacao": "2021-03-26T21:35:39.92Z[UTC]",
+    "id": 2,
+    "nome": "Restaurante",
+    "proprietario": "string"
+  },
+  {
+    "dataAtualizacao": "2021-03-26T21:36:22.308Z[UTC]",
+    "dataCriacao": "2021-03-26T21:36:22.308Z[UTC]",
+    "id": 3,
+    "nome": "Restaurante Japonês",
+    "proprietario": "Proprietario"
+  },
+  {
+    "dataAtualizacao": "2021-03-26T21:37:15.689Z[UTC]",
+    "dataCriacao": "2021-03-26T21:22:30.857Z[UTC]",
+    "id": 1,
+    "nome": "Restaurante Japonês Sushi",
+    "proprietario": "string"
+  },
+  {
+    "dataAtualizacao": "2021-03-26T21:43:43.984Z[UTC]",
+    "dataCriacao": "2021-03-26T21:43:43.984Z[UTC]",
+    "id": 5,
+    "nome": "Pizzaria",
+    "proprietario": "string"
+  }
+]
