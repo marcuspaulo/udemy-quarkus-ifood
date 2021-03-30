@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="pedido" />
-        <module name="cadastro" />
         <module name="marketplace" />
+        <module name="cadastro" />
       </profile>
     </annotationProcessing>
   </component>
