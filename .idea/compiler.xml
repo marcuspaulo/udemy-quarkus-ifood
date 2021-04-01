@@ -6,10 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="pedido" />
+        <module name="command-mode" />
         <module name="marketplace" />
+        <module name="picocli" />
+        <module name="pedido" />
         <module name="cadastro" />
+        <module name="graphql" />
+        <module name="grpc" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="kubequarkus" target="11" />
+      <module name="kubernetes" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

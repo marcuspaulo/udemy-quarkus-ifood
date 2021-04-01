@@ -3,9 +3,19 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/cadastro/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cadastro/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/command-mode/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/command-mode/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/graphql/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/graphql/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/grpc/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/grpc/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kubernetes/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kubernetes/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/marketplace/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/marketplace/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/pedido/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/pedido/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/picocli/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/picocli/src/main/resources" charset="UTF-8" />
   </component>
 </project>

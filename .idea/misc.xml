@@ -4,8 +4,14 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="Quarkus" url="file://$PROJECT_DIR$/../cadastro" />
     <file type="Quarkus" url="file://$PROJECT_DIR$/cadastro" />
+    <file type="Quarkus" url="file://$PROJECT_DIR$/command-mode" />
+    <file type="Quarkus" url="file://$PROJECT_DIR$/graphql" />
+    <file type="Quarkus" url="file://$PROJECT_DIR$/grpc" />
+    <file type="Quarkus" url="file://$PROJECT_DIR$/kubequarkus" />
+    <file type="Quarkus" url="file://$PROJECT_DIR$/kubernetes" />
     <file type="Quarkus" url="file://$PROJECT_DIR$/marketplace" />
     <file type="Quarkus" url="file://$PROJECT_DIR$/pedido" />
+    <file type="Quarkus" url="file://$PROJECT_DIR$/picocli" />
     <file type="Quarkus" url="file://$PROJECT_DIR$/../marketplace" />
     <file type="Quarkus" url="file://$PROJECT_DIR$/../pedido" />
   </component>
@@ -17,6 +23,12 @@
         <option value="$PROJECT_DIR$/../marketplace/pom.xml" />
         <option value="$PROJECT_DIR$/../pedido/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/kubequarkus/pom.xml" />
+        <option value="$PROJECT_DIR$/kubernetes/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="15" project-jdk-type="JavaSDK">

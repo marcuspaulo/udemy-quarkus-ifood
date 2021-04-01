@@ -3,20 +3,19 @@ package br.com.mp.quarkus.ifood.cadastro;
 import br.com.mp.quarkus.ifood.cadastro.dto.*;
 import br.com.mp.quarkus.ifood.cadastro.infra.ConstraintViolationResponse;
 import br.com.mp.quarkus.ifood.cadastro.mapper.RestauranteMapper;
+import org.eclipse.microprofile.jwt.Claim;
+import org.eclipse.microprofile.jwt.Claims;
+import org.eclipse.microprofile.jwt.JsonWebToken;
 import org.eclipse.microprofile.metrics.annotation.Counted;
 import org.eclipse.microprofile.metrics.annotation.SimplyTimed;
 import org.eclipse.microprofile.metrics.annotation.Timed;
-import org.eclipse.microprofile.openapi.annotations.enums.SecuritySchemeType;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
-import org.eclipse.microprofile.openapi.annotations.security.OAuthFlow;
-import org.eclipse.microprofile.openapi.annotations.security.OAuthFlows;
-import org.eclipse.microprofile.openapi.annotations.security.SecurityRequirement;
-import org.eclipse.microprofile.openapi.annotations.security.SecurityScheme;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
+import org.eclipse.microprofile.reactive.messaging.Channel;
+import org.eclipse.microprofile.reactive.messaging.Emitter;
 
-import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -47,6 +46,18 @@ public class RestauranteResource {
     @Inject
     PratoMapper pratoMapper;
 
+    @Inject
+    @Channel("restaurantes")
+    Emitter<Restaurante> emitter;
+
+    @Inject
+    JsonWebToken jwt;
+
+    @Inject
+    @Claim(standard = Claims.sub)
+    String sub;
+
+
     @GET
     @Counted(name = "Quantidade buscas Restaurante")
     @SimplyTimed(name = "Tempo simples de busca")
@@ -60,10 +71,12 @@ public class RestauranteResource {
     @Transactional
     @APIResponse(responseCode = "201", description = "Caso restaurante seja cadastrado com sucesso")
     @APIResponse(responseCode = "400", content = @Content(schema = @Schema(allOf = ConstraintViolationResponse.class)))
-    public Response adicionar(@Valid AdicionarRestauranteDTO adicionarRestauranteDTO) {
-        Restaurante restaurante = restauranteMapper.toRestaurante(adicionarRestauranteDTO);
+    public Response adicionar(@Valid AdicionarRestauranteDTO dto) {
+        Restaurante restaurante = restauranteMapper.toRestaurante(dto);
+        restaurante.proprietario = sub;
         restaurante.persist();
 
+        emitter.send(restaurante);
         return Response.status(CREATED).build();
     }
 
@@ -76,6 +89,10 @@ public class RestauranteResource {
             throw new NotFoundException();
         }
         Restaurante restaurante = restauranteOp.get();
+
+        if (!restaurante.proprietario.equals(sub)) {
+            throw new ForbiddenException();
+        }
 
         //MapStruct: aqui passo a referencia para ser atualizada
         restauranteMapper.toRestaurante(dto, restaurante);
